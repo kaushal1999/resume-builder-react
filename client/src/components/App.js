@@ -32,7 +32,7 @@ function App() {
     interests:[],
   });
     
-const titles=["Personal Details","Education Details","Projects","Experiences","Extras"]  
+const titles=["Personal Details","Education Details","Projects Developed","Experiences","Extras"]  
 
   const body = () => {
     if (page === 1) return <Profile></Profile>
@@ -58,6 +58,12 @@ const titles=["Personal Details","Education Details","Projects","Experiences","E
             Next
             <i class="fa fa-arrow-right"></i>
           </button>
+        </div>
+        <div>
+          {page===5?  <button class="btn" onClick={()=>setPage(page+1)}>
+            Download
+            <i class="fa fa-arrow-down"></i>
+          </button>:<></>}
         </div>
         <p className="text-center">page {page}</p>
       </div>

@@ -35,6 +35,24 @@ export default function Education() {
           ></input>
         </div>
       </div>
+      <div className="row">
+        <div className="col">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Degree"
+            aria-label="First name"
+          />
+        </div>
+        <div className="col">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Course"
+            aria-label="Last name"
+          />
+        </div>
+      </div>
     </div>
   );
 }
