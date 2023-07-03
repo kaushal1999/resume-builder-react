@@ -1,7 +1,9 @@
 import React from 'react'
 
 
-function Project({p_num}) {
+function Project({ p_num }) {
+  
+ 
   
   return (
     <div>
@@ -30,6 +32,13 @@ function Project({p_num}) {
   );
 }
 export default function Projects() {
+  
+   function handleChange(e) {
+     const inputName = e.target.name;
+     const val = e.target.value;
+     setFormData({ ...formData, [inputName]: val });
+   }
+
   return (
     <div>
       <Project p_num={1}></Project>

@@ -1,12 +1,20 @@
 import React from "react";
 
 export default function Education() {
+
+  function handleChange(e) {
+    const inputName = e.target.name;
+    const val = e.target.value;
+    setFormData({ ...formData, [inputName]: val });
+  }
+
   return (
     <div>
       <div className="row">
         <div className="col">
           <input
             type="text"
+          
             className="form-control"
             placeholder="College"
             aria-label="First name"

@@ -1,6 +1,12 @@
 import React from 'react'
 
-function Experience({e_num}) {
+function Experience({ e_num }) {
+  
+  function handleChange(e) {
+    const inputName = e.target.name;
+    const val = e.target.value;
+    setFormData({ ...formData, [inputName]: val });
+  }
     return (
       <div>
         <p>Experience {e_num}</p>

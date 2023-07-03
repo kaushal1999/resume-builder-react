@@ -1,6 +1,12 @@
 import React from 'react'
 
-export default function Extras() {
+export default function Extras({setFormData,formData}) {
+
+  function handleChange(e) {
+    const inputName = e.target.name;
+    const val = e.target.value;
+    setFormData({ ...formData, [inputName]: val });
+  }
   return (
     <div>
       <div>
@@ -8,7 +14,9 @@ export default function Extras() {
         <div class="row">
           <div class="col">
             <input
+              onChange={handleChange}
               type="text"
+              value={formData.skills[0]}
               class="form-control"
               placeholder="skill 1"
               aria-label="First name"
@@ -16,7 +24,9 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              onChange={handleChange}
               type="text"
+              value={formData.skills[1]}
               class="form-control"
               placeholder="skill 2"
               aria-label="Last name"
@@ -24,6 +34,8 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              value={formData.skills[2]}
+              onChange={handleChange}
               type="text"
               class="form-control"
               placeholder="skill 3"
@@ -34,7 +46,9 @@ export default function Extras() {
         <div class="row">
           <div class="col">
             <input
+              onChange={handleChange}
               type="text"
+              value={formData.skills[3]}
               class="form-control"
               placeholder="skill 4"
               aria-label="First name"
@@ -42,7 +56,9 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              onChange={handleChange}
               type="text"
+              value={formData.skills[4]}
               class="form-control"
               placeholder="skill 5"
               aria-label="Last name"
@@ -50,8 +66,10 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              onChange={handleChange}
               type="text"
               class="form-control"
+              value={formData.skills[5]}
               placeholder="skill 6"
               aria-label="First name"
             />
@@ -63,7 +81,9 @@ export default function Extras() {
         <div class="row">
           <div class="col">
             <input
+              onChange={handleChange}
               type="text"
+              value={formData.interests[0]}
               class="form-control"
               placeholder="interest 1"
               aria-label="First name"
@@ -71,6 +91,8 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              value={formData.interests[1]}
+              onChange={handleChange}
               type="text"
               class="form-control"
               placeholder="interest 2"
@@ -79,6 +101,8 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              value={formData.interests[2]}
+              onChange={handleChange}
               type="text"
               class="form-control"
               placeholder="interest 3"
@@ -89,6 +113,8 @@ export default function Extras() {
         <div class="row">
           <div class="col">
             <input
+              value={formData.interests[3]}
+              onChange={handleChange}
               type="text"
               class="form-control"
               placeholder="interest 4"
@@ -97,6 +123,8 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              value={formData.interests[4]}
+              onChange={handleChange}
               type="text"
               class="form-control"
               placeholder="interest 5"
@@ -105,6 +133,8 @@ export default function Extras() {
           </div>
           <div class="col">
             <input
+              value={formData.interests[5]}
+              onChange={handleChange}
               type="text"
               class="form-control"
               placeholder="interest 6"
