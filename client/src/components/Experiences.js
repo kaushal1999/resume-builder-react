@@ -1,19 +1,17 @@
 import React from 'react'
 
-function Experience({ e_num }) {
+function Experience({ e_num ,handleChange,data}) {
   
-  function handleChange(e) {
-    const inputName = e.target.name;
-    const val = e.target.value;
-    setFormData({ ...formData, [inputName]: val });
-  }
     return (
       <div>
         <p>Experience {e_num}</p>
         <div className="row">
           <div className="col">
             <input
+              value={data.org}
+              onChange={(e) => handleChange(e_num, e)}
               type="text"
+              name="org"
               className="form-control"
               placeholder="organization"
               aria-label="Last name"
@@ -21,6 +19,9 @@ function Experience({ e_num }) {
           </div>
           <div className="col ">
             <input
+              value={data.pos}
+              onChange={(e) => handleChange(e_num, e)}
+              name="pos"
               type="text"
               className="form-control"
               placeholder="Position"
@@ -29,8 +30,11 @@ function Experience({ e_num }) {
           </div>
           <div className="col">
             <input
+              value={data.duration}
+              onChange={(e) => handleChange(e_num, e)}
               type="text"
               className="form-control"
+              name="duration"
               placeholder="Duration"
               aria-label="Last name"
             ></input>
@@ -39,11 +43,36 @@ function Experience({ e_num }) {
       </div>
     );
 }
-export default function Experiences() {
+export default function Experiences({formData,setFormData}) {
+  
+  function handleChange(num, e) {
+    let temp;
+    if (num === 1) {
+      temp = formData.experience1
+    temp[e.target.name] = e.target.value;
+     setFormData({ ...formData ,experience1:temp});
+      
+    }
+    else {
+      temp = formData.experience2
+    temp[e.target.name] = e.target.value;
+      
+       setFormData({ ...formData, experience2: temp });
+    }
+  }
+  
   return (
     <div>
-      <Experience e_num="1"></Experience>
-      <Experience e_num="2"></Experience>
+      <Experience
+        e_num={1}
+        data={formData.experience1}
+        handleChange={handleChange}
+      ></Experience>
+      <Experience
+        e_num={2}
+        handleChange={handleChange}
+        data={formData.experience2}
+      ></Experience>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import React from 'react'
 
 function Project({ p_num }) {
   
- 
   
   return (
     <div>

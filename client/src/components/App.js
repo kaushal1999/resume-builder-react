@@ -70,7 +70,7 @@ function App() {
 
       <div className="page-title">{titles[page - 1]}</div>
       {body()}
-      <div>
+      <div className="fixed">
         <button
           class="btn"
           onClick={()=>setPage(page-1)}

@@ -25,3 +25,7 @@
     text-align: center;
 }
 
+.fixed{
+  position:fixed;
+  top: 500px;
+}
