@@ -1,8 +1,10 @@
-const expres = require("express")
+const express = require("express")
 const app = express()
+require("dotenv").config()
+app.use(express.json())
 const createAndSendPdf=require("./controllers/createPdf")
-const port= process.env.PORT||5000 
-require(expres.json())
+const port = process.env.PORT || 5000 
+
 
 app.post("/create-pdf",createAndSendPdf)
 

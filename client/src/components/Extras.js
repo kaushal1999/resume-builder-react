@@ -14,9 +14,9 @@ export default function Extras({formData,setFormData}) {
     setFormData({ ...formData, skills:temp });
     }
     else {
-        const temp = formData.interests;
+        const temp = formData.achievements;
         temp[num - 1] = val;
-        setFormData({ ...formData, interests: temp }); 
+        setFormData({ ...formData, achievements: temp }); 
     }
   }
   return (
@@ -95,38 +95,38 @@ export default function Extras({formData,setFormData}) {
         </div>
       </div>
       <div>
-        <h>Interests</h>
+        <h>Achievements</h>
         <div class="row">
           <div class="col">
             <input
-              name="interest1"
+              name="achievement1"
               onChange={handleChange}
               type="text"
-              value={formData.interests[0]}
+              value={formData.achievements[0]}
               class="form-control"
-              placeholder="interest 1"
+              placeholder="achievement 1"
               aria-label="First name"
             />
           </div>
           <div class="col">
             <input
-              value={formData.interests[1]}
-              name="interest2"
+              value={formData.achievements[1]}
+              name="achievement2"
               onChange={handleChange}
               type="text"
               class="form-control"
-              placeholder="interest 2"
+              placeholder="achievement 2"
               aria-label="Last name"
             />
           </div>
           <div class="col">
             <input
-              value={formData.interests[2]}
-              name="interest3"
+              value={formData.achievements[2]}
+              name="achievement3"
               onChange={handleChange}
               type="text"
               class="form-control"
-              placeholder="interest 3"
+              placeholder="achievement 3"
               aria-label="First name"
             />
           </div>
@@ -134,34 +134,34 @@ export default function Extras({formData,setFormData}) {
         <div class="row">
           <div class="col">
             <input
-              value={formData.interests[3]}
-              name="interest4"
+              value={formData.achievements[3]}
+              name="achievement4"
               onChange={handleChange}
               type="text"
               class="form-control"
-              placeholder="interest 4"
+              placeholder="achievement 4"
               aria-label="First name"
             />
           </div>
           <div class="col">
             <input
-              value={formData.interests[4]}
-              name="interest5"
+              value={formData.achievements[4]}
+              name="achievement5"
               onChange={handleChange}
               type="text"
               class="form-control"
-              placeholder="interest 5"
+              placeholder="achievement 5"
               aria-label="Last name"
             />
           </div>
           <div class="col">
             <input
-              value={formData.interests[5]}
-              name="interest6"
+              value={formData.achievements[5]}
+              name="achievement6"
               onChange={handleChange}
               type="text"
               class="form-control"
-              placeholder="interest 6"
+              placeholder="achievement 6"
               aria-label="First name"
             />
           </div>

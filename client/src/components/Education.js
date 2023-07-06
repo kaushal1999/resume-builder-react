@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function Education() {
-
+export default function Education({ formData, setFormData }) {
+  
   function handleChange(e) {
     const inputName = e.target.name;
     const val = e.target.value;
@@ -13,11 +13,13 @@ export default function Education() {
       <div className="row">
         <div className="col">
           <input
+            
             type="text"
-          
+            onChange={handleChange}
+            value={formData.college}
+            name="college"
             className="form-control"
             placeholder="College"
-            aria-label="First name"
           />
         </div>
         <div className="col position-relative">
@@ -27,19 +29,22 @@ export default function Education() {
           <input
             type="date"
             className="form-control"
-            placeholder="Github"
-            aria-label="Last name"
+            onChange={handleChange}
+            value={formData.from_clg}
+            name="from_clg"
           ></input>
         </div>
         <div className="col position-relative">
           <span class="position-absolute top-0 start-20 translate-middle badge rounded-pill bg-danger">
             to
           </span>
+
           <input
+            onChange={handleChange}
             type="date"
             className="form-control"
-            placeholder="Github"
-            aria-label="Last name"
+            value={formData.to_clg}
+            name="to_clg"
           ></input>
         </div>
       </div>
@@ -49,7 +54,9 @@ export default function Education() {
             type="text"
             className="form-control"
             placeholder="Degree"
-            aria-label="First name"
+            onChange={handleChange}
+            value={formData.degree}
+            name="degree"
           />
         </div>
         <div className="col">
@@ -57,7 +64,9 @@ export default function Education() {
             type="text"
             className="form-control"
             placeholder="Course"
-            aria-label="Last name"
+            onChange={handleChange}
+            value={formData.course}
+            name="course"
           />
         </div>
       </div>

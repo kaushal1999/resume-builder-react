@@ -16,12 +16,9 @@ function App() {
     lastname: "",
     email: "",
     phone: "",
-    website:"",
+    website: "",
     github: "",
     linkedin: "",
-    facebook: "",
-    twitter:"",
-    instagram: "",
     college: "",
     from_clg: "",
     to_clg: "",
@@ -30,10 +27,10 @@ function App() {
     project1: { title: "", link: "", description: "" },
     project2: { title: "", link: "", description: "" },
     project3: { title: "", link: "", description: "" },
-    experience1: { org: "", pos: "", duration: "" },
-    experience2: { org: "", pos: "", duration: "" },
+    experience1: { org: "", pos: "",  description: "" },
+    experience2: { org: "", pos: "",  description: "" },
     skills: [],
-    interests: [],
+    achievements:[]
   });
 
   const postUrl = "/create-pdf";
@@ -48,6 +45,7 @@ function App() {
 
   async function createAndDwonloadPdf() {
     const res = await axios.post(postUrl, formData);
+    
   }
 
   const body = () => {

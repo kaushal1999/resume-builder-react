@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 
-
-export default function Profile({formData,setFormData}) {
-  
-  
-
+export default function Profile({ formData, setFormData }) {
   function handleChange(e) {
     const inputName = e.target.name;
-    const val=e.target.value
-    setFormData({...formData,[inputName]:val})
+    const val = e.target.value;
+    setFormData({ ...formData, [inputName]: val });
   }
 
-  
-  
   return (
     <div className="container">
       <form>
@@ -57,9 +51,8 @@ export default function Profile({formData,setFormData}) {
               onChange={handleChange}
               type="number"
               className="form-control"
-              placeholder="Phone Number"
+              placeholder="Contact Number"
               name="phone"
-              aria-name="Last name"
             />
           </div>
         </div>
@@ -72,7 +65,6 @@ export default function Profile({formData,setFormData}) {
               name="website"
               className="form-control"
               placeholder="Your website"
-              aria-name="First name"
             />
           </div>
           <div className="col">
@@ -83,7 +75,6 @@ export default function Profile({formData,setFormData}) {
               type="text"
               className="form-control"
               placeholder="Github"
-              aria-name="Last name"
             />
           </div>
         </div>
@@ -96,46 +87,9 @@ export default function Profile({formData,setFormData}) {
               name="linkedin"
               className="form-control"
               placeholder="Linkedin"
-              aria-name="First name"
-            />
-          </div>
-          <div className="col">
-            <input
-              onChange={handleChange}
-              type="text"
-              name="twitter"
-              value={formData.twitter}
-              className="form-control"
-              placeholder="Twitter"
-              aria-name="Last name"
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <input
-              onChange={handleChange}
-              type="text"
-              className="form-control"
-              name="facebook"
-              placeholder="Facebook"
-              aria-name="First name"
-              value={formData.facebook}
-            />
-          </div>
-          <div className="col">
-            <input
-              onChange={handleChange}
-              type="text"
-              name="instagram"
-              className="form-control"
-              placeholder="Instagram"
-              value={formData.instagram}
-              aria-name="Last name"
-            />
-          </div>
-        </div>
-        
       </form>
     </div>
   );

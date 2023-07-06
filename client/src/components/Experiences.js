@@ -28,16 +28,17 @@ function Experience({ e_num ,handleChange,data}) {
               aria-label="Last name"
             ></input>
           </div>
+        </div>
+        <div className="row">
           <div className="col">
-            <input
-              value={data.duration}
+            <textarea
+              value={data.description}
               onChange={(e) => handleChange(e_num, e)}
               type="text"
+              name="description"
               className="form-control"
-              name="duration"
-              placeholder="Duration"
-              aria-label="Last name"
-            ></input>
+              placeholder="describe about your job"
+            ></textarea>
           </div>
         </div>
       </div>

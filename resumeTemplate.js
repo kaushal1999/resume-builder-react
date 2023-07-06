@@ -1,4 +1,4 @@
-module.exports = (values) => {
+module.exports = (formData) => {
   const {
     // Profile-Information
     firstname,
@@ -14,51 +14,55 @@ module.exports = (values) => {
 
     // Education Information
     college,
-    fromyear1,
-    toyear1,
-    qualification1,
-    description1,
-    school,
-    fromyear2,
-    toyear2,
-    qualification2,
-    description2,
+    from_clg,
+    to_clg,
+    course,
+    degree,
 
     // Project Information...
-    title1,
-    link1,
-    projectDescription1,
-    title2,
-    link2,
-    projectDescription2,
-    title3,
-    link3,
-    projectDescription3,
+    project1,
+    project2,
+    project3,
 
     // Experience Information
-    institute1,
-    position1,
-    duration1,
-    experienceDescription1,
-    institute2,
-    position2,
-    duration2,
-    experienceDescription2,
+    experience1,
+    experience2,
 
     // Extra Information
-    skill1,
-    skill2,
-    skill3,
-    skill4,
-    skill5,
-    skill6,
-    interest1,
-    interest2,
-    interest3,
-    interest4,
-    interest5,
-    interest6,
-  } = values;
+    skills,
+    interests,
+  } = formData;
+
+  const [skill1, skill2, skill3, skill4, skill5, skill6] = skills;
+
+  const [interest1, interest2, interest3, interest4, interest5, interest6] =
+    interests;
+
+  const {
+    title: title1,
+    link: link1,
+    description: projectDescription1,
+  } = project1;
+
+  const {
+    title: title2,
+    link: link2,
+    description: projectDescription2,
+  } = project2;
+
+  const {
+    title: title3,
+    link: link3,
+    description: projectDescription3,
+  } = project3;
+
+  const { org: institute1, pos: position1, duration: duration1 } = experience1;
+
+  const { org: institute2, pos: position2, duration: duration2 } = experience2;
+
+  experienceDescription1 = "";
+
+  experienceDescription2 = "";
 
   let htmlTemplate = `
   <!DOCTYPE html>
@@ -180,7 +184,7 @@ module.exports = (values) => {
 		height: 120px;
 		text-align: center;
 		font-family: 'Roboto Slab';
-		font-size: 58px;
+		font-size:58px;
 		letter-spacing: 8px;
 		font-weight: 100;
 		line-height: 60px;
@@ -332,7 +336,7 @@ module.exports = (values) => {
                     <svg viewbox="0 0 80 80" class="rela-block logo-svg">
                         <path d="M 10 10 L 52 10 L 72 30 L 72 70 L 30 70 L 10 50 Z" stroke-width="2.5" fill="none"/>
                     </svg>
-                    <p class="logo-text">${firstname[0]}${lastname[0]}</p>
+                    <p class="logo-text">${firstname}${lastname}</p>
                 </div>
 			</div>
 			<!--
@@ -391,15 +395,15 @@ module.exports = (values) => {
   htmlTemplate += `<div class="rela-block caps greyed">Education</div>`;
   if (college != "" && college != null)
     htmlTemplate += `<h3 class="mb-0">${college}</h3>
-			<p class="text-muted light mt-0 mb-1">${fromyear1}<span class="mx-2">to</span>${toyear1}</p>
-			<p class="justified mt-0 mb-1" style="font-size: 17px;">${qualification1}</p>
-			<p class="justified mt-0 mb-3" style="font-size: 17px;">${description1}</p>`;
+			<p class="text-muted light mt-0 mb-1">${from_clg}<span class="mx-2">to</span>${to_clg}</p>
+			<p class="justified mt-0 mb-1" style="font-size: 17px;">${course}</p>
+			<p class="justified mt-0 mb-3" style="font-size: 17px;">${degree}</p>`;
 
-  if (school != "" && school != null)
-    htmlTemplate += `  <h3 class="mb-0">${school}</h3>
-			<p class="text-muted light mt-0 mb-1">${fromyear2}<span class="mx-2">to</span>${toyear2}</p>
-			<p class="justified mt-0 mb-1" style="font-size: 17px;">${qualification2}</p>
-			<p class="justified mt-0 mb-1" style="font-size: 17px;">${description2}</p>`;
+//   if (school != "" && school != null)
+//     htmlTemplate += `  <h3 class="mb-0">${school}</h3>
+// 			<p class="text-muted light mt-0 mb-1">${fromyear2}<span class="mx-2">to</span>${toyear2}</p>
+// 			<p class="justified mt-0 mb-1" style="font-size: 17px;">${qualification2}</p>
+// 			<p class="justified mt-0 mb-1" style="font-size: 17px;">${description2}</p>`;
 
   htmlTemplate += `<div class="rela-block caps greyed">Experience</div>`;
 
@@ -440,3 +444,4 @@ module.exports = (values) => {
   `;
   return htmlTemplate;
 };
+
