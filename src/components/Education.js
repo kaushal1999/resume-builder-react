@@ -13,7 +13,6 @@ export default function Education({ formData, setFormData }) {
       <div className="row">
         <div className="col">
           <input
-            
             type="text"
             onChange={handleChange}
             value={formData.college}
@@ -27,11 +26,12 @@ export default function Education({ formData, setFormData }) {
             from
           </span>
           <input
-            type="date"
+            type="number"
             className="form-control"
             onChange={handleChange}
             value={formData.from_clg}
             name="from_clg"
+            placeholder="yyyy"
           ></input>
         </div>
         <div className="col position-relative">
@@ -41,10 +41,11 @@ export default function Education({ formData, setFormData }) {
 
           <input
             onChange={handleChange}
-            type="date"
+            type="number"
             className="form-control"
             value={formData.to_clg}
             name="to_clg"
+            placeholder="yyyy"
           ></input>
         </div>
       </div>

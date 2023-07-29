@@ -14,7 +14,6 @@ function Experience({ e_num ,handleChange,data}) {
               name="org"
               className="form-control"
               placeholder="organization"
-              aria-label="Last name"
             ></input>
           </div>
           <div className="col ">
@@ -25,7 +24,6 @@ function Experience({ e_num ,handleChange,data}) {
               type="text"
               className="form-control"
               placeholder="Position"
-              aria-label="Last name"
             ></input>
           </div>
         </div>
